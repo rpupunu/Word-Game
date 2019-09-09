@@ -5,13 +5,13 @@
 .container-body {
     height: auto;
     width: 100%;
-    background-image: linear-gradient(white, grey 20%);
+    background-image: linear-gradient(rgb(22, 112, 160), rgb(22, 112, 160) 10%);
 }
 
 .banner-img {
     text-align: center;
     width: auto;
-    max-height: 300px;
+   
 }
 
 h1 {
@@ -19,8 +19,9 @@ h1 {
 }
 
 .card {
-    text-align: center;
+    align: center;
     margin-top: 30px;
+    margin-bottom: 30px;
     line-height: 1.5em;
     border: 20px, solid, black;
     color: #ffffff;
