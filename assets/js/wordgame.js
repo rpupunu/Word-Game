@@ -104,7 +104,7 @@ function resetGame() {
     gameAlreadyStarted = false;
     lettersGuessed = "";
     currentHiddenWord = "";
-    currentHiddenWord = [];
+    currentHiddenWordArray = [];
     document.querySelector("#letters-guessed").innerHTML = lettersGuessed;
     document.querySelector("#guesses-remaining").innerHTML = guessesRemaining;
     document.querySelector("#wins").innerHTML = 0;
@@ -121,7 +121,7 @@ function updateWinCount() {
     if (guessesRemaining > 0) {
 
         wins += 1;
-        console.log("Wins " + wins);
+        console.log("wins " + wins);
         document.querySelector("#wins").innerHTML = wins;
         document.getElementById("heading").innerHTML = aux[1].text;
         document.querySelector("#start-msg").innerHTML = "Good Job!";
