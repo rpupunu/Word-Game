@@ -21,28 +21,36 @@ let aux = [
 //Car make object array: audi, bugatti, ferrari, ford, lamborghini, mclaren, pagoni, porsche
 let words = [
     {
-        "carName": "audi"
+        "carName": "audi",
+        "carPic" : "audir8.jpeg"
     },
     {
-        "carName": "bugatti"
+        "carName": "bugatti",
+        "carPic" : "bugatti.jpeg",
     },
     {
-        "carName": "ferrari"
+        "carName": "ferrari",
+        "carPic" : "farrari.jpeg",
     },
     {
-        "carName": "Ford"
+        "carName": "Ford",
+        "carPic" : "fordgt.jpeg"
     },
     {
-        "carName": "lamborghini"
+        "carName": "lamborghini",
+        "carPic" : "lamborghini.jpeg"
     },
     {
-        "carName": "mclaren"
+        "carName": "mclaren",
+        "carPic" : "mclaren.jpeg"
     },
     {
-        "carName": "pagoni"
+        "carName": "pagoni",
+        "carPic" : "pagoni.jpeg"
     },
     {
-        "carName": "porsche"
+        "carName": "porsche",
+        "carPic" : "porsche.jpeg"
     }
 ];
 
