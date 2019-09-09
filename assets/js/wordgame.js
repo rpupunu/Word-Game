@@ -19,44 +19,49 @@ let aux = [
 ];
 
 //Car make object array: audi, bugatti, ferrari, ford, lamborghini, mclaren, pagoni, porsche
+// var wordObject = {
+//     carName: ["audi", "bugatti", "ferrari", "ford", "lamborghini", "mclaren", "pagoni", "porsche"],
+//     carPic: ["assets/images/audir8.jpeg", "assets/images/bugatti.jpeg", "assets/images/farrari.jpeg", "assets/images/fordgt.jpeg", "assets/images/lamborghini.jpeg", "assets/images/mclaren.jpeg", "assets/images/pagonizonda.jpeg", "assets/images/porsche.jpeg"]
+// }
+
 let words = [
     {
-        "carName": "audi",
-        "carPic" : "audir8.jpeg"
+        carName : "audi",
+        carPic : "assets/images/audir8.jpeg"
     },
     {
-        "carName": "bugatti",
-        "carPic" : "bugatti.jpeg",
+        carName: "bugatti",
+        carPic : "assets/images/bugatti.jpeg",
     },
     {
-        "carName": "ferrari",
-        "carPic" : "farrari.jpeg",
+        carName: "ferrari",
+        carPic : "assets/images/ferrari.jpeg",
     },
     {
-        "carName": "Ford",
-        "carPic" : "fordgt.jpeg"
+        carName: "ford",
+        carPic : "assets/images/fordgt.jpeg"
     },
     {
-        "carName": "lamborghini",
-        "carPic" : "lamborghini.jpeg"
+        carName: "lamborghini",
+        carPic : "assets/images/lamborghini.jpeg"
     },
     {
-        "carName": "mclaren",
-        "carPic" : "mclaren.jpeg"
+        carName: "mclaren",
+        carPic : "assets/images/mclaren.jpeg"
     },
     {
-        "carName": "pagoni",
-        "carPic" : "pagoni.jpeg"
+        carName: "pagoni",
+        carPic : "assets/images/pagonizonda.jpeg"
     },
     {
-        "carName": "porsche",
-        "carPic" : "porsche.jpeg"
+        carName: "porsche",
+        carPic : "assets/images/porsche.jpeg"
     }
 ];
 
 //Gobal varibles
-let wordsRandomOrder = randomOrder(words);
-let currentIndex = 0;
+let randomWordNumber
+//let currentIndex = 0;
 let currentHiddenWordArray = []
 let currentHiddenWord = "";
 let gameOver = false;
@@ -77,7 +82,7 @@ function main() {
 
         //Determine if this is the first keypress event
         if (gameAlreadyStarted === false) {
-            init(wordsRandomOrder);
+            init();
         }
 
         //If not this game continues and checkes to determine if game is over and must be reset
@@ -103,11 +108,13 @@ function isDuplicate(letter) {
     return false;
 }
 
+
+
+
 //Game reset function to reset values and generate a new word from the words array
 function resetGame() {
 
     updateWinCount();
-    wordsRandomOrder = randomOrder(words);
     guessesRemaining = 12;
     gameAlreadyStarted = false;
     lettersGuessed = "";
@@ -115,9 +122,10 @@ function resetGame() {
     currentHiddenWordArray = [];
     document.querySelector("#letters-guessed").innerHTML = lettersGuessed;
     document.querySelector("#guesses-remaining").innerHTML = guessesRemaining;
-    document.querySelector("#wins").innerHTML = 0;
+    document.querySelector("#wins").innerHTML = wins;
     document.querySelector("#hidden-word").innerHTML = "";
-    document.querySelector("#letters-guessed").innerHTML = "None Yet!"
+    document.querySelector("#letters-guessed").innerHTML = "None Yet!";
+    document.querySelector('#hidden-pic').src = words[randomWordNumber].carPic;
     gameOver = false;
 }
 
@@ -203,42 +211,47 @@ function updateStartChanges() {
 }
 
 //Initialize game data
-function init(arr) {
+function init() {
 
     updateStartChanges();
-    initCurrentAndDashedWord(arr);
+    initCurrentAndDashedWord();
 }
 
 //Initializes currentHiddenWordArray and the dashes
-function initCurrentAndDashedWord(arr) {
+function initCurrentAndDashedWord() {
+    randomWordNumber = Math.floor(Math.random() * words.length);
 
-    for (let i = 0; i < arr[currentIndex].carName.length; i++) {
+    for (let i = 0; i < words[randomWordNumber].carName.length; i++) {
         currentHiddenWordArray.push("_");
     }
 
-    currentWord = arr[currentIndex].carName;
+    currentWord = words[randomWordNumber].carName;
     currentHiddenWord = currentHiddenWordArray.join(" ");
     document.querySelector("#wins").innerHTML = wins;
     document.querySelector("#hidden-word").innerHTML = currentHiddenWord;
     document.querySelector("#guesses-remaining").innerHTML = guessesRemaining;
-    document.querySelector("#letters-guessed").innerHTML = "None Yet!"
+    document.querySelector("#letters-guessed").innerHTML = "None Yet!";
+    document.querySelector('#hidden-pic').src = words[randomWordNumber].carPic;
 }
 //Returns a randomly ordered object array
-function randomOrder(arr) {
 
-    let currentIndex = arr.length;
-    let tempObj = []
-    let rand = 0;
 
-    for (let i = 0; i < arr.length; i++) {
-        rand = Math.floor(Math.random() * currentIndex);
-        currentIndex--;
-        tempObj = arr[currentIndex];
-        arr[currentIndex] = arr[rand]
-        arr[rand] = tempObj;
-    }
-    return arr;
-}
+// function randomOrder(arr) {
+
+//     let currentIndex = arr.length;
+//     let tempObj = []
+//     let rand = 0;
+
+//     for (let i = 0; i < arr.length; i++) {
+//         rand = Math.floor(Math.random() * currentIndex);
+//         currentIndex--;
+//         tempObj = arr[currentIndex];
+//         arr[currentIndex] = arr[rand]
+//         arr[rand] = tempObj;
+//     }
+//     randomWordNumber = Math.floor(Math.random() * words.length);
+//     return randomWordNumber;
+// }
 
 
 
