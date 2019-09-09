@@ -1,0 +1,42 @@
+* {
+    box-sizing: border-box;
+}
+
+.container-body {
+    height: auto;
+    width: 100%;
+    background-image: linear-gradient(white, grey 20%);
+}
+
+.banner-img {
+    text-align: center;
+    width: auto;
+    max-height: 300px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.card {
+    text-align: center;
+    margin-top: 30px;
+    line-height: 1.5em;
+    border: 20px, solid, black;
+    color: #ffffff;
+}
+
+.card-left {
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+.card-right {
+    margin-left: 10px;
+    margin-right: 20px;
+}
+
+.card-img-top {
+    width: auto;
+    height: 200px;
+}
