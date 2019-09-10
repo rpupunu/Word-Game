@@ -5,16 +5,16 @@
 // Object Array - Initial, Win, Loss.
 let aux = [
     {
-        "name": "intial",
-        "text": "Can you guess the make of the car?"
+        name : "intial",
+        text : "Can you guess the make of the car?"
     },
     {
-        "name": "win",
-        "text": "Winner, Winner, Chicken Dinner!"
+        name : "win",
+        text : "Winner, Winner, Chicken Dinner!"
     },
     {
-        "name": "loss",
-        "text": "SO SORRY, you LOSE!"
+        name : "loss",
+        text : "SO SORRY, you LOSE!"
     }
 ];
 
